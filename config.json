@@ -16,7 +16,8 @@
     "file",
     "files",
     "read",
-    "write"
+    "write",
+    "parse"
   ],
   "methods": [
     {
