@@ -1,25 +1,52 @@
 const { bootstrap } = require("@kaholo/plugin-library");
+const { open } = require("fs/promises");
+const { resolve } = require("path");
 
-async function hello(params) {
+async function readJsonFile(params) {
   const {
-    helloName,
-    saySecret,
-    secret,
+    filePath,
   } = params;
 
-  let greeting = `Hello ${helloName}!`;
+  const absoluteFilePath = resolve(filePath);
 
-  if (saySecret && !secret) {
-    throw new Error("No secret was provided to say. Please provide a secret or uncheck \"Say Secret\".");
+  let fileHandle;
+  let fileContent;
+  try {
+    fileHandle = await open(absoluteFilePath, "r");
+
+    fileContent = await fileHandle.readFile({ encoding: "utf-8" });
+
+    JSON.parse(fileContent);
+  } finally {
+    await fileHandle?.close();
   }
 
-  if (saySecret) {
-    greeting += `\nHere is the secret: ${secret}`;
-  }
+  return fileContent;
+}
 
-  return greeting;
+async function writeJsonFile(params) {
+  const {
+    filePath,
+    json, // parserType:object validates that for us
+  } = params;
+
+  const absoluteFilePath = resolve(filePath);
+  const jsonString = JSON.stringify(json);
+
+  let fileHandle;
+  try {
+    fileHandle = await open(absoluteFilePath, "wx");
+
+    await fileHandle.writeFile(
+      jsonString,
+      { encoding: "utf-8" },
+    );
+  } finally {
+    await fileHandle?.close();
+  }
 }
 
 module.exports = bootstrap({
-  hello,
+  readJsonFile,
+  writeJsonFile,
 });
