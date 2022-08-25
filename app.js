@@ -1,5 +1,5 @@
 const { bootstrap } = require("@kaholo/plugin-library");
-const { open } = require("fs/promises");
+const { readFile, writeFile } = require("fs/promises");
 const { resolve } = require("path");
 
 async function readJsonFile(params) {
@@ -9,17 +9,15 @@ async function readJsonFile(params) {
 
   const absoluteFilePath = resolve(filePath);
 
-  let fileHandle;
-  let fileContent;
-  try {
-    fileHandle = await open(absoluteFilePath, "r");
+  const fileContent = await readFile(
+    absoluteFilePath,
+    {
+      encoding: "utf-8",
+      flag: "r",
+    },
+  );
 
-    fileContent = await fileHandle.readFile({ encoding: "utf-8" });
-
-    JSON.parse(fileContent);
-  } finally {
-    await fileHandle?.close();
-  }
+  JSON.parse(fileContent);
 
   return fileContent;
 }
@@ -33,17 +31,11 @@ async function writeJsonFile(params) {
   const absoluteFilePath = resolve(filePath);
   const jsonString = JSON.stringify(json);
 
-  let fileHandle;
-  try {
-    fileHandle = await open(absoluteFilePath, "wx");
-
-    await fileHandle.writeFile(
-      jsonString,
-      { encoding: "utf-8" },
-    );
-  } finally {
-    await fileHandle?.close();
-  }
+  await writeFile(
+    absoluteFilePath,
+    jsonString,
+    { encoding: "utf-8" },
+  );
 }
 
 module.exports = bootstrap({
