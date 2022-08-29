@@ -1,7 +1,6 @@
 {
-  "name": "kaholo-plugin-template",
-  "version": "1.0.0",
-  "description": "A template for Kaholo plugin development",
+  "name": "kaholo-plugin-json",
+  "description": "Kaholo Plugin processing JSON files",
   "main": "app.js",
   "scripts": {
     "test": "npx jest .",
@@ -10,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kaholo/kaholo-plugin-template.git"
+    "url": "git+https://github.com/Kaholo/kaholo-plugin-json.git"
   },
   "author": "Kaholo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kaholo/kaholo-plugin-template/issues"
+    "url": "https://github.com/Kaholo/kaholo-plugin-json/issues"
   },
-  "homepage": "https://github.com/Kaholo/kaholo-plugin-template#readme",
+  "homepage": "https://github.com/Kaholo/kaholo-plugin-json#readme",
   "dependencies": {
-    "@kaholo/plugin-library": "^2.0.0"
+    "@kaholo/plugin-library": "^2.1.2"
   },
   "devDependencies": {
     "eslint": "^8.8.0",

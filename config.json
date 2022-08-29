@@ -1,62 +1,55 @@
 {
-  "name": "kaholo-plugin-template",
-  "viewName": "Kaholo Template Plugin",
+  "name": "kaholo-plugin-json",
+  "viewName": "Kaholo JSON Plugin",
   "type": "executer",
   "main": "app.js",
   "execProgram": "node",
   "exposeRoute": false,
   "imgUrl": "logo.png",
-  "version": "2.0.0",
-  "description": "This plugin is only a generic template.",
+  "version": "0.0.1",
+  "description": "Kaholo plugin used to process JSON files.",
   "category": [
     "Basic Tools"
   ],
   "keywords": [
-    "template",
-    "plugin",
-    "kaholo",
-    "hello"
-   ],
-  "settings": [
-    {
-      "name": "helloName",
-      "viewName": "Default Hello Name",
-      "type": "string",
-      "description": "The person to whom to say hello by default",
-      "learnUrl": "https://docs.apify.com/api/v2#/introduction/authentication"
-    }
+    "json",
+    "file",
+    "files",
+    "read",
+    "write",
+    "parse"
   ],
   "methods": [
     {
-      "name": "hello",
-      "viewName": "Say hello",
+      "name": "readJsonFile",
+      "viewName": "Read JSON file",
       "params": [
         {
-          "name": "helloName",
-          "viewName": "Hello Name",
+          "name": "filePath",
+          "viewName": "File path",
           "type": "string",
-          "required": false,
-          "placeholder": "World",
-          "default": "World",
-          "description": "The person to whom to say hello",
-          "learnUrl": "https://en.wikipedia.org/wiki/%22Hello,_World!%22_program"
+          "required": true,
+          "description": "The file to get the JSON object from"
+        }
+      ]
+    }, {
+      "name": "writeJsonFile",
+      "viewName": "Write JSON file",
+      "params": [
+        {
+          "name": "filePath",
+          "viewName": "File path",
+          "type": "string",
+          "required": true,
+          "description": "The file to store the JSON object at"
         },
         {
-          "name": "secret",
-          "viewName": "Secret",
-          "type": "vault",
-          "required": false,
-          "description": "A secret we might also say.",
-          "learnUrl": "https://en.wikipedia.org/wiki/%22Hello,_World!%22_program"
-        },
-        {
-          "name": "saySecret",
-          "viewName": "Say secret",
-          "type": "boolean",
-          "required": false,
-          "default": false,
-          "description": "If checked we'll also say the secret.",
-          "learnUrl": "https://en.wikipedia.org/wiki/%22Hello,_World!%22_program"
+          "name": "json",
+          "viewName": "JSON",
+          "type": "text",
+          "parserType": "object",
+          "required": true,
+          "description": "String representing the JSON object to store"
         }
       ]
     }
