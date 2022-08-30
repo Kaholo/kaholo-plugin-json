@@ -1,5 +1,5 @@
 {
-  "name": "kaholo-plugin-json",
+  "name": "json",
   "viewName": "Kaholo JSON Plugin",
   "type": "executer",
   "main": "app.js",
