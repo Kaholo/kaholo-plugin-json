@@ -1,6 +1,6 @@
 {
   "name": "json",
-  "viewName": "Kaholo JSON Plugin",
+  "viewName": "JSON",
   "type": "executer",
   "main": "app.js",
   "execProgram": "node",
