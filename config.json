@@ -6,7 +6,7 @@
   "execProgram": "node",
   "exposeRoute": false,
   "imgUrl": "logo.png",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Kaholo plugin used to process JSON files.",
   "category": [
     "Basic Tools"
