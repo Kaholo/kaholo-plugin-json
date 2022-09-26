@@ -17,9 +17,7 @@ async function readJsonFile(params) {
     },
   );
 
-  JSON.parse(fileContent);
-
-  return fileContent;
+  return JSON.parse(fileContent);
 }
 
 async function writeJsonFile(params) {
