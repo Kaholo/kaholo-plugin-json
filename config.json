@@ -6,7 +6,7 @@
   "execProgram": "node",
   "exposeRoute": false,
   "imgUrl": "logo.png",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Kaholo plugin used to process JSON files.",
   "category": [
     "Basic Tools"
@@ -29,7 +29,7 @@
           "viewName": "File path",
           "type": "string",
           "required": true,
-          "description": "The file to get the JSON object from"
+          "description": "A JSON file to parse and deliver in Final Result"
         }
       ]
     }, {
@@ -41,15 +41,15 @@
           "viewName": "File path",
           "type": "string",
           "required": true,
-          "description": "The file to store the JSON object at"
+          "description": "A path and file name where the JSON document will be written as a one-line string"
         },
         {
           "name": "json",
-          "viewName": "JSON",
+          "viewName": "JSON Document",
           "type": "text",
           "parserType": "object",
           "required": true,
-          "description": "String representing the JSON object to store"
+          "description": "The JSON document as multiline text, one-line string or a code layer object"
         }
       ]
     }
