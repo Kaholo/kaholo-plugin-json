@@ -13,7 +13,9 @@
   ],
   "keywords": [
     "json",
-    "file",
+    "jason",
+    "object",
+    "document",
     "files",
     "read",
     "write",
@@ -41,7 +43,7 @@
           "viewName": "File path",
           "type": "string",
           "required": true,
-          "description": "A path and file name where the JSON document will be written as a one-line string"
+          "description": "A path and file name where the JSON document will be written to file"
         },
         {
           "name": "json",
@@ -50,6 +52,13 @@
           "parserType": "object",
           "required": true,
           "description": "The JSON document as multiline text, one-line string or a code layer object"
+        },
+        {
+          "name": "echoDocument",
+          "viewName": "Return Document As Final Result",
+          "type": "boolean",
+          "default": true,
+          "description": "Returns the document written in the Kaholo execution's Final Result"
         }
       ]
     }
