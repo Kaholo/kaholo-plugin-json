@@ -7,7 +7,7 @@
   "exposeRoute": false,
   "imgUrl": "logo.png",
   "version": "1.1.0",
-  "description": "Kaholo plugin used to read, write, and parse JSON files",
+  "description": "Read, write, and parse JSON files",
   "category": [
     "Basic Tools"
   ],
