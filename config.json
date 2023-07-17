@@ -6,14 +6,16 @@
   "execProgram": "node",
   "exposeRoute": false,
   "imgUrl": "logo.png",
-  "version": "1.0.0",
-  "description": "Kaholo plugin used to process JSON files.",
+  "version": "1.1.0",
+  "description": "Read, write, and parse JSON files",
   "category": [
     "Basic Tools"
   ],
   "keywords": [
     "json",
-    "file",
+    "jason",
+    "object",
+    "document",
     "files",
     "read",
     "write",
@@ -22,7 +24,7 @@
   "methods": [
     {
       "name": "readJsonFile",
-      "viewName": "Read JSON file",
+      "viewName": "Read JSON File",
       "params": [
         {
           "name": "filePath",
@@ -34,14 +36,14 @@
       ]
     }, {
       "name": "writeJsonFile",
-      "viewName": "Write JSON file",
+      "viewName": "Write JSON File",
       "params": [
         {
           "name": "filePath",
           "viewName": "File path",
           "type": "string",
           "required": true,
-          "description": "A path and file name where the JSON document will be written as a one-line string"
+          "description": "A path and file name where the JSON document will be written to file"
         },
         {
           "name": "json",
@@ -50,6 +52,13 @@
           "parserType": "object",
           "required": true,
           "description": "The JSON document as multiline text, one-line string or a code layer object"
+        },
+        {
+          "name": "echoDocument",
+          "viewName": "Return Document As Final Result",
+          "type": "boolean",
+          "default": true,
+          "description": "Also return the JSON document in the Action execution's Final Result."
         }
       ]
     }

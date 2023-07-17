@@ -17,13 +17,13 @@
     "url": "https://github.com/Kaholo/kaholo-plugin-json/issues"
   },
   "homepage": "https://github.com/Kaholo/kaholo-plugin-json#readme",
-  "dependencies": {
-    "@kaholo/plugin-library": "^2.1.2"
-  },
   "devDependencies": {
     "eslint": "8.8.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.25.4",
     "jest": "27.5.0"
+  },
+  "dependencies": {
+    "@kaholo/plugin-library": "^2.3.2"
   }
 }

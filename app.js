@@ -24,16 +24,23 @@ async function writeJsonFile(params) {
   const {
     filePath,
     json, // parserType:object validates that for us
+    echoDocument,
   } = params;
 
   const absoluteFilePath = resolve(filePath);
-  const jsonString = JSON.stringify(json);
+  const jsonString = `${JSON.stringify(json)}\n`;
 
   await writeFile(
     absoluteFilePath,
     jsonString,
     { encoding: "utf-8" },
   );
+
+  if (echoDocument) {
+    return json;
+  }
+
+  return {};
 }
 
 module.exports = bootstrap({
